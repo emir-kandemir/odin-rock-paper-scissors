@@ -2,10 +2,16 @@ function getComputerChoice(number) {
   let randomNumber = Math.floor(Math.random() * 3) + 1;
   number = randomNumber;
   if (randomNumber === 1) {
-    console.log("rock");
+    return "rock";
   } else if (randomNumber === 2) {
-    console.log("paper");
+    return "paper";
   } else if (randomNumber === 3) {
-    console.log("scissors");
+    return "scissors";
   }
+}
+
+function getPlayerChoice(choice) {
+  let playerChoice = prompt("Pick something, Rock/Paper/Scissors");
+  choice = playerChoice;
+  return playerChoice;
 }
