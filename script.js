@@ -1,17 +1,48 @@
-function getComputerChoice(number) {
+let humanScore = 0;
+let computerScore = 0;
+
+function getComputerChoice() {
   let randomNumber = Math.floor(Math.random() * 3) + 1;
-  number = randomNumber;
   if (randomNumber === 1) {
-    return "rock";
+    return 1;
   } else if (randomNumber === 2) {
-    return "paper";
+    return 2;
   } else if (randomNumber === 3) {
-    return "scissors";
+    return 3;
   }
 }
 
-function getPlayerChoice(choice) {
-  let playerChoice = prompt("Pick something, Rock/Paper/Scissors");
-  choice = playerChoice;
+function getHumanChoice() {
+  let playerChoice = Number(
+    prompt("Type 1 for 'rock', 2 for 'paper', 3 for 'scissors'"),
+  );
+  if (playerChoice === 1) {
+    return 1;
+  } else if (playerChoice === 2) {
+    return 2;
+  } else if (playerChoice === 3) {
+    return 3;
+  }
   return playerChoice;
 }
+
+function playRound(humanChoice, computerChoice) {
+  if (humanChoice === computerChoice) {
+    console.log("It is a tie.");
+  } else if (
+    (humanChoice === 1 && computerChoice === 2) ||
+    (humanChoice === 2 && computerChoice === 3)
+  ) {
+    console.log("You lost computer wins.");
+  } else if (
+    (humanChoice === 1 && computerChoice === 3) ||
+    (humanChoice === 2 && computerChoice === 1)
+  ) {
+    console.log("You win computer lost");
+  }
+}
+
+const humanSelection = getHumanChoice();
+const computerSelection = getComputerChoice();
+
+playRound(humanSelection, computerSelection);
