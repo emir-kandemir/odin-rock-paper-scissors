@@ -34,7 +34,8 @@ function playRound(humanChoice, computerChoice) {
     console.log("It is a tie.");
   } else if (
     (humanChoice === 1 && computerChoice === 2) ||
-    (humanChoice === 2 && computerChoice === 3)
+    (humanChoice === 2 && computerChoice === 3) ||
+    (humanChoice === 3 && computerChoice === 1)
   ) {
     computerScore++;
     console.log(
@@ -43,7 +44,8 @@ function playRound(humanChoice, computerChoice) {
     console.log("You lost computer wins.");
   } else if (
     (humanChoice === 1 && computerChoice === 3) ||
-    (humanChoice === 2 && computerChoice === 1)
+    (humanChoice === 2 && computerChoice === 1) ||
+    (humanChoice === 3 && computerChoice === 2)
   ) {
     humanScore++;
     console.log(
