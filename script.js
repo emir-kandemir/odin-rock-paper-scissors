@@ -55,7 +55,30 @@ function playRound(humanChoice, computerChoice) {
   }
 }
 
-const humanSelection = getHumanChoice();
-const computerSelection = getComputerChoice();
+function declareWinner() {
+  if (computerScore > humanScore) {
+    console.log("Computer wins the game.");
+  } else if (humanScore > computerScore) {
+    console.log("You win the game.");
+  }
+}
 
-function playGame() {}
+function playGame() {
+  const humanSelection = getHumanChoice();
+  const computerSelection = getComputerChoice();
+  const rpsPlay = playRound(humanSelection, computerSelection);
+  if (computerScore === 3 || humanScore === 3) {
+    if (computerScore === 3) {
+      console.log("Computer wins.");
+    } else {
+      console.log("You win.");
+    }
+  }
+}
+
+playGame();
+playGame();
+playGame();
+playGame();
+playGame();
+declareWinner();
