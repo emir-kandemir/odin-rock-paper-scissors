@@ -28,6 +28,9 @@ function getHumanChoice() {
 
 function playRound(humanChoice, computerChoice) {
   if (humanChoice === computerChoice) {
+    console.log(
+      `Computer Score : ${computerScore} vs Human Score: ${humanScore}`,
+    );
     console.log("It is a tie.");
   } else if (
     (humanChoice === 1 && computerChoice === 2) ||
