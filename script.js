@@ -42,6 +42,10 @@ function playRound(humanChoice, computerChoice) {
     (humanChoice === 1 && computerChoice === 3) ||
     (humanChoice === 2 && computerChoice === 1)
   ) {
+    humanScore++;
+    console.log(
+      `Computer Score : ${computerScore} vs Human Score: ${humanScore}`,
+    );
     console.log("You win computer lost");
   }
 }
