@@ -1,5 +1,7 @@
 let humanScore = 0;
 let computerScore = 0;
+let humanSelection = getHumanChoice();
+let computerSelection = getComputerChoice();
 
 function getComputerChoice() {
   let randomNumber = Math.floor(Math.random() * 3) + 1;
@@ -21,7 +23,6 @@ function getHumanChoice() {
   } else if (playerChoice === "scissors") {
     return "scissors";
   }
-  // return playerChoice;
 }
 
 function playRound(humanChoice, computerChoice) {
@@ -29,7 +30,9 @@ function playRound(humanChoice, computerChoice) {
     console.log(
       `Computer Score : ${computerScore} vs Human Score: ${humanScore}`,
     );
-    console.log("It is a tie.");
+    console.log(
+      `You choose '${humanSelection}', computer choose '${computerSelection}'. It is a tie.`,
+    );
   } else if (
     (humanChoice === "rock" && computerChoice === "paper") ||
     (humanChoice === "paper" && computerChoice === "scissors") ||
@@ -39,7 +42,7 @@ function playRound(humanChoice, computerChoice) {
     console.log(
       `Computer Score : ${computerScore} vs Human Score: ${humanScore}`,
     );
-    console.log("You lost computer wins.");
+    console.log(`You lose '${computerSelection}' beats '${humanSelection}'.`);
   } else if (
     (humanChoice === "rock" && computerChoice === "scissors") ||
     (humanChoice === "paper" && computerChoice === "rock") ||
@@ -49,15 +52,11 @@ function playRound(humanChoice, computerChoice) {
     console.log(
       `Computer Score : ${computerScore} vs Human Score: ${humanScore}`,
     );
-    console.log("You win computer lost");
+    console.log(`You win '${humanSelection}' beats '${computerSelection}'.`);
   }
 }
 
-let humanSelection = getHumanChoice();
-let computerSelection = getComputerChoice();
 playRound(humanSelection, computerSelection);
-console.log(humanSelection);
-console.log(computerSelection);
 // function declareWinner() {
 //   if (computerScore === humanScore) {
 //     playGame();
