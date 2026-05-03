@@ -74,6 +74,7 @@ function playGame() {
   computerSelection = getComputerChoice();
   playRound(humanSelection, computerSelection);
 
+  console.log("---FINAL RESULT---");
   if (humanScore > computerScore) {
     console.log("You won the game!");
   } else if (computerScore > humanScore) {
